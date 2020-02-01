@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+
+<body>
+    <!---------------------------------------------- BEGIN CONTAINER ------------------------------------->
+    <div class="container">
+        <!---------------------------------------------- BEGIN CARD 1 ------------------------------------->
+        <div class="card">
+            <div class="face face1 dashboard">
+                <div class="content">
+                    <img src="{{ url_for('static', filename='image/combo-chart.png') }}">
+                </div>
+            </div>
+
+
+            <div class="face face2">
+                <div class="content">
+                    <p>Dashboard blah blah blah</p>
+                    <a href="{{ url_for('dashboard.dashboard') }}">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------- END CARD 1 ------------------------------------->
+
+
+        <!---------------------------------------------- BEGIN CARD 2 ------------------------------------->
+        <div class="card">
+            <div class="face face1 report">
+                <div class="content">
+                    <img src="{{ url_for('static', filename='image/paper.png') }}">
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Report blah blah blah</p>
+                    <a href="{{ url_for('report.report') }}">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------- END CARD 2 ------------------------------------->
+
+
+        <!---------------------------------------------- BEGIN CARD 3 ------------------------------------->
+        <div class="card">
+            <div class="face face1 recommendation">
+                <div class="content">
+                    <img src="{{ url_for('static', filename='image/list.png') }}">
+                </div>
+            </div>
+
+            <div class="face face2">
+                <div class="content">
+                    <p>Recommendation blah blah blah</p>
+                    <a href="{{ url_for('rec_sys.rec_sys') }}">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------- END CARD 3 ------------------------------------->
+
+    </div>
+    <!---------------------------------------------- END CONTAINER ------------------------------------->
+
+</body>
+
+</html>

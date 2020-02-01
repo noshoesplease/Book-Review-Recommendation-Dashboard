@@ -1,0 +1,24 @@
+Review
+{
+    "reviewerID": "A1340OFLZBW5NG",
+    "asin": "000100039X",
+    "reviewerName": "Amazon Customer", 
+    "helpful": [0, 0], 
+    "reviewText": "I LOVE this book... his writing seems to just flow from page to page. I get something different from this book each time I read it..",
+    "overall": 5.0,
+    "summary": "Perhaps the greatest book that I have ever read",
+    "unixReviewTime": 1231977600, 
+    "reviewTime": "01 15, 2009"
+}
+
+Metadata
+{
+    "asin": "0001048791",
+    "salesRank": {"Books": 6334800},
+    "imUrl": "http://ecx.images-amazon.com/images/I/51MKP0T4DBL.jpg",
+    "categories": [["Books"]],
+    "title": "The Crucible: Performed by Stuart Pankin, Jerome Dempsey &amp; Cast"
+}
+
+
+group by date

@@ -1,0 +1,63 @@
+ *,
+ *::before,
+ *::after {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     border: 1px solid #242424;
+ }
+ 
+ @font-face {
+     font-family: PopLight;
+     src: url('./fonts/Poppins-Light.tff')
+ }
+ 
+ @font-face {
+     font-family: PopRegular;
+     src: url('./fonts/Poppins-Regular.tff')
+ }
+ 
+ body {
+     font-family: PopLight, sans-serif;
+     color: #666;
+     text-align: center;
+ }
+ 
+ .report {
+     background-color: #242424;
+ }
+ 
+ .report a {
+     text-decoration: none;
+ }
+ 
+ nav {
+     min-height: 10vh;
+     width: 90%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px 0px;
+ }
+ 
+ .nav {
+     height: 100%;
+     max-width: 50%;
+     float: left;
+     margin: auto;
+     padding: 10px 40px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ .white-space {
+     height: 100%;
+     max-width: 50%;
+     float: right;
+     margin: auto;
+     padding: 10px 40px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }

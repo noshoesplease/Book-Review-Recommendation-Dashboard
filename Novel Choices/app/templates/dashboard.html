@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <title>Dashboard</title>
+</head>d
+
+<body>
+
+    <div class='dashboard'>
+        <header>
+            <nav id="main-nav">
+                <a href="{{ url_for('main.main') }}">Home</a>
+                <a href="#">Dashboard</a>
+                <a href="{{ url_for('report.report') }}">Report</a>
+                <a href="{{ url_for('rec_sys.rec_sys') }}">Recommendation</a>
+            </nav>
+            <nav id='dash-nav'>
+                <a href="#">2018</a>
+                <a href="#">Charts</a>
+                <a href="#">Data</a>
+                <a href="#">Info</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page page-title">
+                <div class="title-content">
+                    <h2>2020 Amazon Book Benchmark</h2>
+                    <p>This report describes Amazon's Book Review Dataset results</p>
+                </div>
+            </section>
+
+            <section class='page page-chart'>
+                <div class="chart-content">
+                    <h2>Stats By Book Type</h2>
+
+                    <h3>Top Reviews by Negative Review</h3>
+                    <p>Normal Histogram</p>
+                    <div class="chart">
+                        <iframe src="http://127.0.0.1:8050/" frameborder="0">
+                            Chart Goes Here
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class='page page-stat'>
+                <div class="stat-content">
+                    <h2 id='stat_1' class="stat">0</h2>
+                    <!-- <h2 id='stat_1_val' hidden>{{ stats[0] }}</h2> -->
+                    <p>2020's median Ranking for each Genre. The national median is 50.</p>
+                </div>
+            </section>
+
+            <section class='page page-chart'>
+                <div class="chart-content">
+                    <h2> Year Published & Price Breakdown</h2>
+
+                    <h3>Horizontal Bar Chart</h3>
+                    <p>Most Frequently used words in complaints</p>
+                    <div class="chart">
+                        <iframe src="http://127.0.0.1:8050/" frameborder="0">
+                          Chart Goes Here
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class='page page-stat'>
+                <div class="stat-content">
+                    <h2 id='stat_2' class="stat">0</h2>
+                    <!-- <h2 id='stat_2_val' hidden>{{ stats[1] }}</h2> -->
+
+                    <p>Lorizzle ipsizzle dolor fo shizzle, shizzlin dizzle adipiscing shizznit.</p>
+                </div>
+            </section>
+
+            <section class='page page-chart'>
+                <div class="chart-content">
+                    <h2>Comparison</h2>
+                    <p>Treemap</p>
+                    <p>Wordcloud</p>
+                    <div class="chart">
+                        <iframe src="http://127.0.0.1:8050/" frameborder="0">
+                            Chart Goes Here
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class='page page-stat'>
+                <div class="stat-content">
+                    <h2 id='stat_3' class="stat">0</h2>
+                    <!-- <h2 id='stat_3_val' hidden>{{ stats[2] }}</h2> -->
+
+                    <p>Lorizzle ipsizzle dolor fo shizzle, shizzlin dizzle adipiscing shizznit.</p>
+                </div>
+            </section>
+
+            <section class='page page-chart'>
+                <div class="chart-content">
+                    <h2>Comparison</h2>
+                    <p>Topic modelling using LDA</p>
+                    <div class="chart">
+                        <iframe src="http://127.0.0.1:8050/" frameborder="0">
+                            Chart Goes Here
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class='page page-stat'>
+                <div class="stat-content">
+                    <h2 id='stat_4' class="stat">0</h2>
+                    <!-- <h2 id='stat_4_val' hidden>{{ stats[3] }}</h2> -->
+
+                    <p>Topic modelling using LDA</p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div id="credits" class="footer-detail">
+                <h4>Credits</h4>
+                <p>This tool was developed by<a href="https://www.instagram.com/ultra_devin/"> Devin Custodio </a>for the Rutgers University-Camden Big Data Algorithms Course.</p>
+            </div>
+            <br>
+            <div id="contact" class="footer-detail">
+                <h4>Contact</h4>
+
+                <p>Questions about the tool, the data, or the energy benchmarking program can be directed to Devin at <a href="mailto: devin.roy.custodio@gmail.com">devin.roy.custodio@gmail.com.</a></p>
+            </div>
+            <br>
+            <div id="full-report" class="footer-detail">
+                <h4>Full Report</h4>
+                <p>For more information and to see the full report, please visit the results site <a href="{{ url_for('report.report') }}">here</a>.</p>
+            </div>
+        </footer>
+        <div id="glossary"></div>
+    </div>
+
+
+
+
+    <script src="{{ url_for('static', filename='countUp.js') }}"></script>
+
+    <script>
+        window.onload = function() {
+            var stat1_val = parseInt(document.getElementById('stat_1_val').innerHTML);
+            var stat2_val = parseInt(document.getElementById('stat_2_val').innerHTML);
+            var stat3_val = parseInt(document.getElementById('stat_3_val').innerHTML);
+            var stat4_val = parseInt(document.getElementById('stat_4_val').innerHTML);
+
+            document.getElementById('stat_1_val').remove();
+            document.getElementById('stat_2_val').remove();
+            document.getElementById('stat_3_val').remove();
+            document.getElementById('stat_4_val').remove();
+
+            var stat1 = new CountUp('stat_1', stat1_val);
+            var stat2 = new CountUp('stat_2', stat2_val);
+            var stat3 = new CountUp('stat_3', stat3_val);
+            var stat4 = new CountUp('stat_4', stat4_val);
+
+            stat1.start();
+            stat2.start();
+            stat3.start();
+            stat4.start();
+
+        }
+    </script>
+
+</body>
+
+</html>

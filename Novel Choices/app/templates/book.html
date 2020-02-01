@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='book.css') }}">
+    <title>{{ book.title }} | novel choices</title>
+</head>
+
+<body ontouchstart="">
+    <div class="WebsitePage ">
+        <div class="WebsitePage__bd ">
+            <div class="WebsitePage__inner ">
+                <div class="Header ">
+                        <h1 class="Header__title">{{ book.title }}</h1>
+                    </a>
+                </div>
+                <article class="Snapshot ">
+                    <div class="Browser Browser--large Browser--onDark">
+                        <div class="Browser__chrome ">
+                            <span class="Browser__dots ">       
+                            </span>
+                            <span class="Browser__title "></span>
+                        </div>
+                        <div cladss="Browser__bd ">
+                            <figure class="Snapshot__fig ">
+                                <div class="image-container">
+                                    <img src="{{ book.imUrl }}" alt="">
+                                </div>
+                                <div class="book-info">
+                                    <h6 class="card-title"> Title </h6>
+                                    <p class="card-text">{{ book.title }}</p>
+                                    <h6 class="card-title"> ASIN </h6>
+                                    <p class="card-text"> {{ book.asin }} </p>
+                                    <h6 class="card-title"> Price </h6>
+                                    {% if book.price %}
+                                    <p class="card-text">${{ book.price }}</p>
+                                    {% else %}
+                                    <p class="card-text">No data is available.</p>
+                                    {% endif %}
+                                    <h6 class="card-title"> Description </h6>
+                                    {% if book.description %}
+                                    <p class="card-text">{{ book.description }}</p>
+                                    {% else %}
+                                    <p class="card-text">No data is available.</p>
+                                    {% endif %}
+                                 </div>
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

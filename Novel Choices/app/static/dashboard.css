@@ -1,0 +1,248 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #242424; */
+}
+
+@font-face {
+    font-family: PopLight;
+    src: url('./fonts/Poppins-Light.tff')
+}
+
+@font-face {
+    font-family: PopRegular;
+    src: url('./fonts/Poppins-Regular.tff')
+}
+
+body {
+    font-family: PopLight, sans-serif;
+    color: #666;
+    text-align: center;
+}
+
+.dashboard {
+    background-color: #c2c1c1;
+}
+
+.dashboard a {
+    text-decoration: none;
+}
+
+main {
+    scroll-snap-type: y mandatory;
+}
+
+header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+@media screen and (max-width: 580px) {
+    header {
+        padding: 20px 10px !important;
+    }
+    header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    #main-nav {
+        float: none;
+    }
+}
+
+
+/* --------------------- NAVIGATION STYLE -------------------- */
+
+nav {
+    min-height: 10vh;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+#main-nav {
+    height: 100%;
+    max-width: 50%;
+    float: left;
+    margin: auto;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-nav a {
+    /* display: inline-block; */
+    padding: 4px 7px;
+    margin: 5px 2px;
+}
+
+#dash-nav a {
+    /* display: inline-block; */
+    padding: 4px 7px;
+    margin: 5px 2px;
+}
+
+#dash-nav {
+    height: 100%;
+    max-width: 50%;
+    float: right;
+    margin: auto;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ----------------- END NAVIGATION STYLE -------------------- */
+
+
+/* ---------------------------------------------------- MAIN STYLE -------------------- */
+
+.page {
+    min-height: 90vh;
+    min-width: 50%;
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+}
+
+main .page {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.statistic {
+    background-color: #8a9396;
+    color: #fff;
+}
+
+.chart {
+    padding-top: 200px;
+    background-color: #f0f1f2;
+}
+
+
+/* ----------------------------- TITLE PAGE ------------------------- */
+
+.page-title {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/highereducation/image/upload/v1533591754/TheBestColleges.org/16-morgan-library.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page.page-title .title-content {
+    grid-column: 2/3;
+    align-self: flex-start;
+    padding-top: 300px
+}
+
+.page.page-title .title-content h2 {
+    margin-bottom: 200px;
+    font-size: 80px;
+    color: #f0f1f2;
+}
+
+.page.page-title .title-content p {
+    font-size: 20px;
+    color: #f0f1f2;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+
+/* ----------------------------- END TITLE PAGE ------------------------- */
+
+.page.page-stat {
+    background-color: #f0f1f2;
+    color: #666;
+}
+
+.page.page-chart {
+    background-color: #8a9396;
+    color: #fff;
+}
+
+.page.page-chart .chart-content {
+    grid-column: 2/3;
+    align-self: flex-end;
+}
+
+.page.page-chart .chart-content {
+    padding-bottom: 340px;
+}
+
+.chart-content h2,
+.chart-content p,
+.chart-content h3 {
+    padding-top: 60px;
+}
+
+.page.page-stat .stat-content {
+    grid-column: 2/3;
+    align-self: flex-end;
+}
+
+.page.page-stat .stat-content {
+    padding-top: 240px;
+    padding-bottom: 280px;
+}
+
+.stat {
+    font-family: serif;
+    font-weight: 700;
+    font-size: 12rem;
+}
+
+.stat-content p {
+    padding-top: 50px;
+    font-size: 1.3rem;
+}
+
+
+/* ----------------------- END MAIN STYLE -------------------- */
+
+footer {
+    background-color: #333;
+    margin-left: -15px;
+    margin-left: -15px;
+    padding-top: 30px;
+}
+
+footer h4 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+footer .footer-detail {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer p {
+    margin: 21px 0 21px 0;
+}
+
+footer p a {
+    color: #ff8a88;
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0088a9;
+}

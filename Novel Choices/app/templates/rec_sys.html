@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='rec-sys.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title>Ratings</title>
+
+    <style>
+        .stars-outer {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .stars-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+        }
+        
+        .stars-outer::before {
+            content: "\f005 \f005 \f005 \f005 \f005";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #ccc;
+        }
+        
+        .stars-inner::before {
+            content: "\f005 \f005 \f005 \f005 \f005";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: rgb(122, 216, 200);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav">
+            <a href="{{ url_for('main.main') }}">Home</a>
+            <a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('report.report') }}">Report</a>
+            <a href="#">Recommendation</a>
+        </nav>
+        <nav class='white-space'>
+        </nav>
+    </header>
+    <div class="Grid Grid--up "><span class="Grid__unit Grid__unit--spacer "></span></div>
+    <h1 class="Heading ">Novel Choices is a recommendation resource showcasing totally amazing books.</h1>
+    <div class="grid grid-down">
+    <div class="container mt-5">
+        <div class="form-group">
+            <select id="book-select" class="form-control custom-select">
+                <option value="0" disabled selected>Select Book</option>
+                <option value="book0">{{ books[0].title }}</option>
+                <option value="book1">{{ books[1].title }}</option>
+                <option value="book2">{{ books[2].title }}</option>
+                <option value="book3">{{ books[3].title }}</option>
+                <option value="book4">{{ books[4].title }}</option>
+                <option value="book5">{{ books[5].title }}</option>
+                <option value="book6">{{ books[6].title }}</option>
+                <option value="book7">{{ books[7].title }}</option>
+                <option value="book8">{{ books[8].title }}</option>
+                <option value="book9">{{ books[9].title }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input step='0.1' min='1' max='5' placeholder="rate 1 - 5" disabled type="number" id="rating-control" class="form-control">
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Ratings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="book0">
+                    <td><a href="{{ url_for('rec_sys.book', asin=books[0].asin) }}">{{ books[0].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+                <tr class="book1">
+                    <td><a href="{{ url_for('rec_sys.book', asin=books[1].asin) }}">{{ books[1].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+                <tr class="book2">
+                    <td><a href="{{ url_for('rec_sys.book',asin=books[2].asin) }}">{{ books[2].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+                <tr class="book3">
+                    <td><a href="{{ url_for('rec_sys.book',asin=books[3].asin) }}">{{ books[3].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+                <tr class="book4">
+                    <td><a href="{{ url_for('rec_sys.book',asin=books[4].asin) }}">{{ books[4].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+                <tr class="book5">
+                    <td><a href="{{ url_for('rec_sys.book', asin=books[5].asin) }}">{{ books[5].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr><tr class="book6">
+                    <td><a href="{{ url_for('rec_sys.book', asin=books[6].asin) }}">{{ books[6].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr><tr class="book7">
+                    <td><a href="{{ url_for('rec_sys.book', asin=books[7].asin) }}">{{ books[7].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr><tr class="book8">
+                    <td><a href="{{ url_for('rec_sys.book', asin=books[8].asin) }}">{{ books[8].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr><tr class="book9">
+                    <td><a href="{{ url_for('rec_sys.book', asin=books[9].asin) }}">{{ books[9].title }}</a></td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="form-group">
+        <button id="prediction-control" type="submit" disabled onclick="send_ratings();"><a id ='get-predictions' onclick="return false;" style="text-decoration: none; color: buttonText;" href="{{ url_for('rec_sys.prediction') }}">Get Prediction</a></button>
+    </div>
+
+    <script>
+        function send_ratings() {
+            rating_control.disabled = true;
+            $.post("/rec_sys", {
+                javascript_data: ratings
+            });
+        }
+    </script>
+    
+    <script>
+        // inital ratings
+        const ratings = {
+            book0: 1,
+            book1: 1,
+            book2: 1,
+            book3: 1,
+            book4: 1,
+            book5: 1,
+            book6: 1,
+            book7: 1,
+            book8: 1,
+            book9: 1,
+        };
+
+        // max rating
+        const total_stars = 5;
+
+        // run get ratings when DOM loads
+        document.addEventListener('DOMContentLoaded', getRatings);
+
+        // form elements
+        const book_select = document.getElementById('book-select');
+        const rating_control = document.getElementById('rating-control');
+        const prediction_control = document.getElementById('prediction-control');
+        const get_predictions = document.getElementById('get-predictions');
+
+
+        // init book
+        let book;
+
+        // book select change
+        book_select.addEventListener('change', (e) => {
+            book = e.target.value;
+            // enable rating control
+            rating_control.disabled = false;
+            prediction_control.disabled = false;
+            get_predictions.onclick = 'return true';
+            rating_control.value = ratings[book]
+        });
+
+        // rating control change
+        rating_control.addEventListener('blur', (e) => {
+            const rating = e.target.value;
+            // make sure 5 or under
+            if (rating > 5 || rating < 1) {
+                alert('Please rate 1 - 5');
+                prediction_control.disabled = true;
+                get_predictions.onclick = 'return false';
+                return ;
+            }
+            // change the rating
+            ratings[book] = rating;
+            getRatings();
+        });
+
+        // get ratings
+        function getRatings() {
+            for (let rating in ratings) {
+                // get percentage
+                const starPercentage = (ratings[rating] / total_stars) * 100;
+
+                // round to nearest 10
+                const startPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+
+                // set width of stars-inner to percentage
+                document.querySelector(`.${rating}
+                .stars-inner`).style.width =
+                    startPercentageRounded;
+
+                // add number rating
+                document.querySelector(`.${rating}
+                .number-rating`).innerHTML = ratings[rating];
+            }
+        }
+    </script>
+</body>

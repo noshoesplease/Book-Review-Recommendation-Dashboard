@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='rec-sys.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stars.css') }}">
+    <title>Results</title>
+</head>
+
+<body>
+
+    <div class='rec-sys'>
+        <header>
+            <nav class="nav">
+                <a href="{{ url_for('main.main') }}">Home</a>
+                <a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a>
+                <a href="{{ url_for('report.report') }}">Report</a>
+                <a href="{{ url_for('rec_sys.rec_sys') }}">Recommendation</a>
+            </nav>
+            <nav class='white-space'>
+            </nav>
+        </header>
+
+
+        <main class='Main'>
+            <div class="Grid Grid--up "><span class="Grid__unit Grid__unit--spacer "></span></div>
+            <h1 class="Heading ">Thank you for using Novel Choices. Please enjoy your suggested content.</h1>
+            <div class="grid grid-down">
+
+                {% for result in results %}
+                <div class="Grid__unit ">
+                    <article class="Preview" data-year="2019" data-month="12">
+                        <div class="Browser ">
+                            <div class="Browser__chrome "><span class="Browser__dots "></span></div>
+                            <div class="Browser__bd ">
+                                <figure class="Preview__fig "><span style="padding-bottom:62.5%;background-color:rgb(155, 24, 122);" class="Imgset is-loaded"></span>
+                                    <div class="Preview__actions ">
+                                        <a href="https://amazon-asin.com/asincheck/?product_id={{ result.asin }}" target="_blank" class="Preview__action Preview__action--globe">
+                                            <div class="Preview__actionText ">Visit Website</div>
+                                        </a>
+                                        <a href="{{ url_for('rec_sys.book',asin=result.asin) }}" class="Preview__action Preview__action--eye">
+                                            <div class="Preview__actionText ">Details</div>
+                                        </a>
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="Preview__meta ">
+                            <h1 class="Preview__title ">{{ result.title }}</h1>
+                        </div>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
